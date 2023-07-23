@@ -23,35 +23,32 @@
                             <div class="card-header">
                                 <button class="btn btn-primary"
                                 id="modal-1" data-toggle="modal"
-                                data-target="#addModal">+</button>
+                                data-target="#addModal">Tambah</button>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
                                     <table class="table-striped table-md table">
                                         <tr>
-                                            <td>No</td>
+                                            <th>No</th>
                                             <th>Nama Obat</th>
                                             <th>Stock</th>
                                             <th>Satuan</th>
                                             <th>Action</th>
                                         </tr>
-                                        @foreach($data_obat as $p)
                                         <?php $no=1 ?>
+                                        @foreach($data_obat as $p)
                                         <tr>
-                                            <td>{{ $no++ }}</td>
+                                            <td>{{ $no }}</td>
                                             <td>{{ $p->nama_obat }}</td>
                                             <td>{{ $p->stock }}</td>
                                             <td>{{ $p->satuan }}</td>
                                             <td>
-                                                <a href="#"
-                                                    class="btn btn-warning">Edit</a>
-                                                    <a href="#"
-                                                    class="btn btn-danger">Hapus</a>
+                                                <a class="btn btn-warning" href="/features-data-obat/edit/{{ $p->id }}">Edit</a>
+                                                <a class="btn btn-danger" href="/features-data-obat/delete/{{ $p->id }}">Hapus</a>
                                                 </td>
                                         </tr>
+                                        <?php $no++ ?>
                                         @endforeach
-                                       
-
                                     </table>
                                 </div>
                             </div>
@@ -90,7 +87,8 @@
         id="addModal">
         <div class="modal-dialog"
             role="document">
-            <form action="{{ '/features-data-obat' }}" method="post">
+            <form action="{{route('store')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Tambah Data Obat</h5>
@@ -102,7 +100,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/store" method="post">
                         <div class="card">
                             <div class="card-body">
                             
@@ -143,6 +140,9 @@
                 </div>
              </form>
         </div>
+        
+    </div>
+    
     </div>
     </div>
 @endsection

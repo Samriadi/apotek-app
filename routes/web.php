@@ -228,6 +228,11 @@ Route::get('/error-503', function () {
 // features
 Route::get('/features-data-obat', 'DataObatController@index');
 
+Route::post('/features-data-obat/store', 'DataObatController@store')->name('store');
+Route::get('/features-data-obat/edit/{id}','DataObatController@edit')->name('edit');
+Route::post('/features-data-obat/update', 'DataObatController@update')->name('update');
+Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
+
 
 Route::get('/features-activities', function () {
     return view('pages.features-activities', ['type_menu' => 'features']);
