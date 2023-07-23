@@ -200,6 +200,8 @@ Route::post('/features-data-obat/update', 'DataObatController@update')->name('up
 Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
 
 Route::get('/features-data-penjualan', 'DataPenjualanController@index');
+Route::get('/features-data-penjualan/add', 'DataPenjualanController@add')->name('add');
+Route::post('/features-data-penjualan/store', 'DataPenjualanController@store')->name('store');
 
 
 // auth

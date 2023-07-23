@@ -21,9 +21,7 @@
                     <div class="col-12 col-md-6 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <button class="btn btn-primary"
-                                id="modal-1" data-toggle="modal"
-                                data-target="#addModal">Tambah</button>
+                                <a class="btn btn-primary" href="/features-data-penjualan/add">Tambah</a>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
