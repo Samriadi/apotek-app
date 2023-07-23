@@ -294,6 +294,10 @@
                         <a class="beep beep-sidebar"
                             href="{{ url('auth-login2') }}">Login 2</a>
                     </li>
+                    <li class="{{ Request::is('auth-login-apotek') ? 'active' : '' }}">
+                        <a class="beep beep-sidebar"
+                            href="{{ url('auth-login-apotek') }}">Login Apotek</a>
+                    </li>
                     <li class="{{ Request::is('auth-register') ? 'active' : '' }}">
                         <a href="{{ url('auth-register') }}">Register</a>
                     </li>
@@ -329,6 +333,10 @@
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-bicycle"></i> <span>Features</span></a>
                 <ul class="dropdown-menu">
+                    <li class="{{ Request::is('features-data-obat') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('features-data-obat') }}">Data Obat</a>
+                    </li>
                     <li class="{{ Request::is('features-activities') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ url('features-activities') }}">Activities</a>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataObatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -200,6 +201,9 @@ Route::get('/auth-login', function () {
 Route::get('/auth-login2', function () {
     return view('pages.auth-login2', ['type_menu' => 'auth']);
 });
+Route::get('/auth-login-apotek', function () {
+    return view('pages.auth-login-apotek', ['type_menu' => 'auth']);
+});
 Route::get('/auth-register', function () {
     return view('pages.auth-register', ['type_menu' => 'auth']);
 });
@@ -222,6 +226,9 @@ Route::get('/error-503', function () {
 });
 
 // features
+Route::get('/features-data-obat', 'DataObatController@index');
+
+
 Route::get('/features-activities', function () {
     return view('pages.features-activities', ['type_menu' => 'features']);
 });
