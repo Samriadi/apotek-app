@@ -17,6 +17,10 @@
                         <a class="nav-link"
                             href="{{ url('features-data-obat') }}">Data Obat</a>
                     </li>
+                    <li class="{{ Request::is('features-data-penjualan') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('features-data-penjualan') }}">Data Penjualan Obat</a>
+                    </li>
                    
                 </ul>
             </li>

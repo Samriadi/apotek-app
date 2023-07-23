@@ -191,15 +191,20 @@ Route::get('/modules-weather-icon', function () {
     return view('pages.modules-weather-icon', ['type_menu' => 'modules']);
 });
 
+
+// features
+Route::get('/features-data-obat', 'DataObatController@index');
+Route::post('/features-data-obat/store', 'DataObatController@store')->name('store');
+Route::get('/features-data-obat/edit/{id}','DataObatController@edit')->name('edit');
+Route::post('/features-data-obat/update', 'DataObatController@update')->name('update');
+Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
+
+Route::get('/features-data-penjualan', 'DataPenjualanController@index');
+
+
 // auth
 Route::get('/auth-forgot-password', function () {
     return view('pages.auth-forgot-password', ['type_menu' => 'auth']);
-});
-Route::get('/auth-login', function () {
-    return view('pages.auth-login', ['type_menu' => 'auth']);
-});
-Route::get('/auth-login2', function () {
-    return view('pages.auth-login2', ['type_menu' => 'auth']);
 });
 Route::get('/auth-login-apotek', function () {
     return view('pages.auth-login-apotek', ['type_menu' => 'auth']);
@@ -210,29 +215,6 @@ Route::get('/auth-register', function () {
 Route::get('/auth-reset-password', function () {
     return view('pages.auth-reset-password', ['type_menu' => 'auth']);
 });
-
-// error
-Route::get('/error-403', function () {
-    return view('pages.error-403', ['type_menu' => 'error']);
-});
-Route::get('/error-404', function () {
-    return view('pages.error-404', ['type_menu' => 'error']);
-});
-Route::get('/error-500', function () {
-    return view('pages.error-500', ['type_menu' => 'error']);
-});
-Route::get('/error-503', function () {
-    return view('pages.error-503', ['type_menu' => 'error']);
-});
-
-// features
-Route::get('/features-data-obat', 'DataObatController@index');
-
-Route::post('/features-data-obat/store', 'DataObatController@store')->name('store');
-Route::get('/features-data-obat/edit/{id}','DataObatController@edit')->name('edit');
-Route::post('/features-data-obat/update', 'DataObatController@update')->name('update');
-Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
-
 
 Route::get('/features-activities', function () {
     return view('pages.features-activities', ['type_menu' => 'features']);
@@ -252,22 +234,5 @@ Route::get('/features-settings', function () {
 Route::get('/features-setting-detail', function () {
     return view('pages.features-setting-detail', ['type_menu' => 'features']);
 });
-Route::get('/features-tickets', function () {
-    return view('pages.features-tickets', ['type_menu' => 'features']);
-});
 
-// utilities
-Route::get('/utilities-contact', function () {
-    return view('pages.utilities-contact', ['type_menu' => 'utilities']);
-});
-Route::get('/utilities-invoice', function () {
-    return view('pages.utilities-invoice', ['type_menu' => 'utilities']);
-});
-Route::get('/utilities-subscribe', function () {
-    return view('pages.utilities-subscribe', ['type_menu' => 'utilities']);
-});
 
-// credits
-Route::get('/credits', function () {
-    return view('pages.credits', ['type_menu' => '']);
-});
