@@ -30,4 +30,31 @@ class DataPenjualanController extends Controller
         // alihkan halaman ke halaman 
         return redirect('features-data-penjualan');
     }
+    public function edit($id)
+    {
+        $data_penjualan = DB::table('data-penjualan')->where('id_penjualan',$id)->get();
+        $data_obat = DB::table('data-obat')->get();
+
+        return view('pages.features-data-penjualan-update', ['type_menu' => 'features'], ['data_penjualan' => $data_penjualan, 'data_obat' => $data_obat]);
+    
+    }
+    public function update(Request $request)
+    {
+        // update data 
+        DB::table('data-penjualan')->where('id_penjualan',$request->id)->update([
+            'tanggal_penjualan' => $request->post('tanggal_penjualan'),
+            'nama_obat' => $request->post('nama_obat'),
+            'jumlah_penjualan' => $request->post('jumlah_penjualan')
+        ]);
+        // alihkan halaman ke halaman 
+        return redirect('features-data-penjualan');
+    }
+    public function delete($id)
+    {
+        // menghapus data  berdasarkan id yang dipilih
+        DB::table('data-penjualan')->where('id_penjualan',$id)->delete();
+            
+        // alihkan halaman ke halaman 
+        return redirect('features-data-penjualan');
+    }
 }

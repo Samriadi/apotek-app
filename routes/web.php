@@ -194,14 +194,22 @@ Route::get('/modules-weather-icon', function () {
 
 // features
 Route::get('/features-data-obat', 'DataObatController@index');
-Route::post('/features-data-obat/store', 'DataObatController@store')->name('store');
-Route::get('/features-data-obat/edit/{id}','DataObatController@edit')->name('edit');
-Route::post('/features-data-obat/update', 'DataObatController@update')->name('update');
-Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
-
 Route::get('/features-data-penjualan', 'DataPenjualanController@index');
+Route::get('/features-data-prediksi', 'DataPrediksiController@index');
+Route::get('/features-data-pembelian', 'DataPembelianController@index');
+
+Route::get('/features-data-obat/edit/{id}','DataObatController@edit')->name('edit');
+Route::get('/features-data-penjualan/edit/{id}','DataPenjualanController@edit')->name('edit');
 Route::get('/features-data-penjualan/add', 'DataPenjualanController@add')->name('add');
+Route::get('/features-data-prediksi/add', 'DataPrediksiController@add')->name('add');
+
+Route::get('/features-data-obat/delete/{id}','DataObatController@delete')->name('delete');
+Route::get('/features-data-penjualan/delete/{id}','DataPenjualanController@delete')->name('delete');
+
+Route::post('/features-data-obat/store', 'DataObatController@store')->name('store');
+Route::post('/features-data-obat/update', 'DataObatController@update')->name('update');
 Route::post('/features-data-penjualan/store', 'DataPenjualanController@store')->name('store');
+Route::post('/features-data-penjualan/update', 'DataPenjualanController@update')->name('update');
 
 
 // auth

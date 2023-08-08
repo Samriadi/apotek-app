@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Data-Penjualan')
+@section('title', 'Data-Prediksi')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -10,10 +10,10 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Penjualan Obat</h1>
+                <h1>Data Prediksi</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item">Data Penjualan</div>
+                    <div class="breadcrumb-item">Data Prediksi</div>
                 </div>
             </div>
             <div class="section-body">
@@ -21,32 +21,37 @@
                     <div class="col-12 col-md-6 col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <a class="btn btn-primary" href="/features-data-penjualan/add">Tambah</a>
+                                <a class="btn btn-primary" href="/features-data-prediksi/add">Tambah</a>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive">
                                     <table class="table-striped table-md table">
                                         <tr>
                                             <th>No</th>
-                                            <th>Tanggal Penjualan</th>
+                                            <th>Bulan Awal</th>
+                                            <th>Jumlah Terjual</th>
+                                            <th>Bulan Akhir</th>
+                                            <th>Jumlah Terjual</th>
                                             <th>Nama Obat</th>
-                                            <th>Jumlah Penjualan</th>
+                                            <th>Prediksi Bulan Berikutnya</th>
                                             <th>Action</th>
                                         </tr>
                                         <?php $no=1 ?>
-                                        @foreach($data_penjualan as $p)
                                         <tr>
-                                            <td>{{ $no }}</td>
-                                            <td>{{ $p->tanggal_penjualan }}</td>
-                                            <td>{{ $p->nama_obat }}</td>
-                                            <td>{{ $p->jumlah_penjualan }}</td>
+                                            <td>1</td>
+                                            <td>Juli</td>
+                                            <td>15</td>
+                                            <td>Agustus</td>
+                                            <td>17</td>
+                                            <td>Paracetamol</td>
+                                            <td>20</td>
+
                                             <td>
-                                                <a class="btn btn-warning" href="/features-data-penjualan/edit/{{ $p->id_penjualan }}">Edit</a>
-                                                <a class="btn btn-danger" href="/features-data-penjualan/delete/{{ $p->id_penjualan }}">Hapus</a>
+                                                <a class="btn btn-warning" >Edit</a>
+                                                <a class="btn btn-danger"">Hapus</a>
                                                 </td>
                                         </tr>
                                         <?php $no++ ?>
-                                        @endforeach
                                     </table>
                                 </div>
                             </div>

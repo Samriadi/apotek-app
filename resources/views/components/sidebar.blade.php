@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Apotek Rakyat</a>
+            <a href="index.html">Apotek Obat Rakyat</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">AR</a>
@@ -20,7 +20,19 @@
                     <li class="{{ Request::is('features-data-penjualan') ? 'active' : '' }}">
                         <a class="nav-link"
                             href="{{ url('features-data-penjualan') }}">Data Penjualan Obat</a>
+                    </li> 
+                    <li class="{{ Request::is('features-data-prediksi') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('features-data-prediksi') }}">Prediksi Pembelian Obat</a>
                     </li>
+                    <li class="{{ Request::is('features-data-pembelian') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('features-data-pembelian') }}">Data Pembelian Obat</a>
+                    </li>
+                    {{-- <li class="{{ Request::is('features-data-laporan') ? 'active' : '' }}">
+                        <a class="nav-link"
+                            href="{{ url('features-data-laporan') }}">Laporan</a>
+                    </li> --}}
                    
                 </ul>
             </li>
